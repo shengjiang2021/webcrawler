@@ -8,7 +8,7 @@ This is a level limited web crawler, The application can do the following:
 
 to start the app, install java first:
 1. git clone respository
-2. cd into this repo
+2. cd webcrawler
 3. javac GetLinkUtil.java WebCrawler.java
 4. java -cp ../ webcrawler.WebCrawler "url to fetch" "level limit"
       for exmaple: java -cp ../ webcrawler.WebCrawler https://www.rescale.com 1
