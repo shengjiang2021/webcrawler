@@ -19,6 +19,6 @@ public class WebCrawler {
         }
 
         int limit = Integer.parseInt(limitStr);
-        GetLinksUtil.printAllLinks(url, 0, limit);
+        GetLinksUtil.printAllLinks(url, 0, limit, null);
     }
 }

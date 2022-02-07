@@ -44,7 +44,7 @@ public class GetLinksUtil {
         return sb.toString();
     }
 
-    public static void printAllLinks(String url, int lv, int limit) {
+    public static void printAllLinks(String url, int lv, int limit, String parentUrl) {
         if (lv > limit) return;
 
         List<String> allLinks = new ArrayList<>();
@@ -54,11 +54,13 @@ public class GetLinksUtil {
         String nextLink;
         do {
             nextLink = getNextLink(page, curIndex, lv);
+            if (parentUrl != null && parentUrl.eqals(nextLink)) continue;
+
             if (nextLink != null && nextLink.startsWith("http")) {
                 allLinks.add(nextLink);
 
                 String finalNextLink = nextLink;
-                new Thread(() -> GetLinksUtil.printAllLinks(finalNextLink, lv + 1, limit)).start();
+                new Thread(() -> GetLinksUtil.printAllLinks(finalNextLink, lv + 1, limit, url)).start();
             }
         } while (nextLink != null);
 
