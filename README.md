@@ -6,6 +6,7 @@ This is a level limited web crawler, The application can do the following:
 4. multithread added for getting all the links
 
 
+
 to start the app, install java first:
 1. git clone respository
 2. cd webcrawler
